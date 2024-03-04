@@ -1,4 +1,4 @@
-package gr.atc.training.PDFBoxService;
+package gr.atc.training.pdftools;
 
 import java.io.File;
 import java.io.IOException;
