@@ -11,6 +11,7 @@ public class App {
 		System.out.println("args[0]: " + args[0]);
 		System.out.println("args[1]: " + args[1]);
 		PDFBox pb = new PDFBox();
+		
 		/*
 		String pageRange = args[2];
 		System.out.println("pdfPath: " + pdfPath);
@@ -28,8 +29,11 @@ public class App {
 		}
 		pb.split(pdfPath, pageStart, pageEnd);
 		*/
-		
+		/*
 		String pdfPath2 = args[1];
-		pb.merge(pdfPath,pdfPath2);
+		 */
+		// pb.merge(pdfPath,pdfPath2);
+		
+		pb.getText(pdfPath, 4);
 	}
 }

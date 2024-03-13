@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
 
 public class PDFBox {
 
@@ -68,5 +69,24 @@ public class PDFBox {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public String getText(String pdfFile, int pageNumber) {
+		
+		File file1 = new File(pdfFile);
+		try {
+			PDDocument doc = Loader.loadPDF(file1);
+			PDFTextStripper pdfStripper = new PDFTextStripper();
+			pdfStripper.setStartPage(pageNumber);
+			pdfStripper.setEndPage(pageNumber);
+			String text = pdfStripper.getText(doc);
+			System.out.println(text);
+			return pdfFile;
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }
